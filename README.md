@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+Motion Log - Sistema de Rastreamento de Atividade Física
+Este projeto é uma aplicação web full-stack desenvolvida como parte da disciplina de Engenharia de Softwares Escaláveis. O Motion Log permite aos usuários registar e acompanhar as suas atividades físicas, promovendo um estilo de vida mais saudável e ativo. A arquitetura inicial é um monólito simples, projetado para evoluir para uma arquitetura de microsserviços em fases futuras.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Funcionalidades Implementadas (Primeira Entrega)
+Gestão de Usuários:
 
-## Available Scripts
+Cadastro de novos usuários com nome, e-mail e senha.
 
-In the project directory, you can run:
+Autenticação de usuários existentes.
 
-### `npm start`
+Registo de Atividades:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Formulário para que usuários autenticados possam registar uma nova atividade física.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Seleção de tipos de atividade pré-definidos (Caminhada, Corrida, Ciclismo e natação).
 
-### `npm test`
+Entrada de dados como duração (em minutos) e distância (em km).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Histórico de Atividades:
 
-### `npm run build`
+Visualização de todo o histórico de atividades registadas pelo utilizador logado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A lista de histórico é atualizada em tempo real após um novo registo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tecnologias Utilizadas
+O projeto é dividido em duas partes principais: o backend e o frontend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend (Servidor)
+Java 17: Linguagem de programação principal.
 
-### `npm run eject`
+Spring Boot: Framework para a criação da aplicação e da API REST.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Spring Data JPA (Hibernate): Para a persistência de dados e comunicação com o banco de dados.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Maven: Ferramenta para gestão de dependências e build do projeto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+H2 Database: Banco de dados em memória, utilizado para o ambiente de desenvolvimento.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Lombok: Para reduzir código boilerplate nas entidades.
 
-## Learn More
+Frontend (Cliente)
+React: Biblioteca para a construção da interface de utilizador.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+JavaScript (ES6+): Linguagem de programação principal.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Axios: Cliente HTTP para realizar as requisições à API do backend.
 
-### Code Splitting
+CSS3: Para a estilização dos componentes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+NPM (Node Package Manager): Gestor de pacotes do Node.js.
 
-### Analyzing the Bundle Size
+Pré-requisitos
+Antes de começar, certifique-se de que tem as seguintes ferramentas instaladas na sua máquina:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Java Development Kit (JDK) - Versão 17 ou superior
 
-### Making a Progressive Web App
+Apache Maven
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Node.js e NPM
 
-### Advanced Configuration
+Como Executar o Projeto
+Siga os passos abaixo para executar a aplicação localmente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Backend (Servidor Spring Boot)
+Clone o repositório:
 
-### Deployment
+git clone <url-do-seu-repositorio>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Navegue para a pasta do backend:
 
-### `npm run build` fails to minify
+cd motionlog
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Execute a aplicação:
+
+Via IntelliJ IDEA: Abra a classe MotionlogApplication.java e clique no botão "Run".
+
+Via terminal Maven:
+
+mvn spring-boot:run
+
+O servidor estará a correr em http://localhost:8080.
+
+Pode aceder à consola do banco de dados H2 em http://localhost:8080/h2-console com as seguintes credenciais:
+
+JDBC URL: jdbc:h2:mem:motionlogdb
+
+Username: sa
+
+Password: password
+
+2. Frontend (Aplicação React)
+Abra um novo terminal.
+
+Navegue para a pasta do frontend:
+
+cd frontend
+
+Instale as dependências:
+
+npm install
+
+Inicie a aplicação de desenvolvimento:
+
+npm start
+
+A aplicação será aberta automaticamente no navegador em http://localhost:3000.
+
+Estrutura de Pastas
+O projeto está organizado da seguinte forma para separar claramente as responsabilidades do backend e do frontend:
+
+/
+├── motionlog/      <-- Aplicação Backend (Spring Boot)
+│   ├── src/
+│   └── pom.xml
+├── frontend/       <-- Aplicação Frontend (React)
+│   ├── src/
+│   └── package.json
+└── README.md       <-- Este arquivo
+
+Desenvolvido por Sandy Pereira de Sousa.
