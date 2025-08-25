@@ -105,16 +105,4 @@ npm start
 
 A aplicação será aberta automaticamente no navegador em http://localhost:3000.
 
-Estrutura de Pastas
-O projeto está organizado da seguinte forma para separar claramente as responsabilidades do backend e do frontend:
-
-/
-├── motionlog/      <-- Aplicação Backend (Spring Boot)
-│   ├── src/
-│   └── pom.xml
-├── frontend/       <-- Aplicação Frontend (React)
-│   ├── src/
-│   └── package.json
-└── README.md       <-- Este arquivo
-
 Desenvolvido por Sandy Pereira de Sousa.
