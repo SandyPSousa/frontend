@@ -1,28 +1,28 @@
-Motion Log - Sistema de Rastreamento de Atividade Física
-Este projeto é uma aplicação web full-stack desenvolvida como parte da disciplina de Engenharia de Softwares Escaláveis. O Motion Log permite aos usuários registar e acompanhar as suas atividades físicas, promovendo um estilo de vida mais saudável e ativo. A arquitetura inicial é um monólito simples, projetado para evoluir para uma arquitetura de microsserviços em fases futuras.
+***Motion Log - Sistema de Rastreamento de Atividade Física***
+Este projeto é uma aplicação web full-stack desenvolvida como parte da disciplina de Engenharia de Softwares Escaláveis. O Motion Log permite aos usuários registrar e acompanhar suas atividades físicas, promovendo um estilo de vida mais saudável e ativo. A arquitetura inicial é um monólito simples, projetado para evoluir para uma arquitetura de microsserviços em fases futuras.
 
-Funcionalidades Implementadas (Primeira Entrega)
+***Funcionalidades Implementadas (Primeira Entrega)***
 Gestão de Usuários:
 
 Cadastro de novos usuários com nome, e-mail e senha.
 
-Autenticação de usuários existentes.
+Autenticação segura de usuários existentes.
 
-Registo de Atividades:
+Registro de Atividades:
 
-Formulário para que usuários autenticados possam registar uma nova atividade física.
+Formulário para que usuários autenticados possam registrar uma nova atividade física.
 
-Seleção de tipos de atividade pré-definidos (Caminhada, Corrida, Ciclismo e natação).
+Seleção de tipos de atividade pré-definidos (caminhada, corrida, ciclismo e natação).
 
 Entrada de dados como duração (em minutos) e distância (em km).
 
 Histórico de Atividades:
 
-Visualização de todo o histórico de atividades registadas pelo utilizador logado.
+Visualização de todo o histórico de atividades registradas pelo usuário autenticado.
 
-A lista de histórico é atualizada em tempo real após um novo registo.
+A lista de histórico é atualizada em tempo real após um novo registro.
 
-Tecnologias Utilizadas
+***Tecnologias Utilizadas***
 O projeto é dividido em duas partes principais: o backend e o frontend.
 
 Backend (Servidor)
@@ -36,10 +36,10 @@ Maven: Ferramenta para gestão de dependências e build do projeto.
 
 H2 Database: Banco de dados em memória, utilizado para o ambiente de desenvolvimento.
 
-Lombok: Para reduzir código boilerplate nas entidades.
+Lombok: Para reduzir código boilerplate (repetitivo) nas entidades.
 
 Frontend (Cliente)
-React: Biblioteca para a construção da interface de utilizador.
+React: Biblioteca para a construção da interface de usuário.
 
 JavaScript (ES6+): Linguagem de programação principal.
 
@@ -47,10 +47,10 @@ Axios: Cliente HTTP para realizar as requisições à API do backend.
 
 CSS3: Para a estilização dos componentes.
 
-NPM (Node Package Manager): Gestor de pacotes do Node.js.
+NPM (Node Package Manager): Gerenciador de pacotes do Node.js.
 
-Pré-requisitos
-Antes de começar, certifique-se de que tem as seguintes ferramentas instaladas na sua máquina:
+***Pré-requisitos***
+Antes de começar, certifique-se de que você tem as seguintes ferramentas instaladas na sua máquina:
 
 Java Development Kit (JDK) - Versão 17 ou superior
 
@@ -58,7 +58,7 @@ Apache Maven
 
 Node.js e NPM
 
-Como Executar o Projeto
+***Como Executar o Projeto***
 Siga os passos abaixo para executar a aplicação localmente.
 
 1. Backend (Servidor Spring Boot)
@@ -78,9 +78,9 @@ Via terminal Maven:
 
 mvn spring-boot:run
 
-O servidor estará a correr em http://localhost:8080.
+O servidor estará rodando em http://localhost:8080.
 
-Pode aceder à consola do banco de dados H2 em http://localhost:8080/h2-console com as seguintes credenciais:
+Você pode acessar o console do banco de dados H2 em http://localhost:8080/h2-console com as seguintes credenciais:
 
 JDBC URL: jdbc:h2:mem:motionlogdb
 
